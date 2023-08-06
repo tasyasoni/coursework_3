@@ -30,6 +30,8 @@ class Operations():
         """
         if self.state == "EXECUTED":
             return True
+        else:
+            return False
 
     def code_count_number(self):
         """
@@ -42,13 +44,13 @@ class Operations():
             if f == "Счет":
                 s = self.from1[-20:]
                 s1 = s[:4]
-                s2 = s[5:7] + "** **** "
+                s2 = s[4:6] + "** **** "
                 s3 = s[-4:]
                 s4 = self.from1[:-20]
             else:
                 s = self.from1[-16:]
                 s1 = s[:4]
-                s2 = s[5:7] + "** "
+                s2 = s[4:6] + "** "
                 s3 = s[-4:]
                 s4 = self.from1[:-16]
             self.from1 = s4 + s1 + " " + s2 + "**** " + s3

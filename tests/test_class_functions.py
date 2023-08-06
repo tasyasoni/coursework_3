@@ -3,7 +3,7 @@ import pytest
 
 @pytest.fixture
 def operations_instans():
-    instans = Operations("CANSELED",
+    instans = Operations("EXECUTED",
                          "2019-08-26",
                          "Перевод организации",
                          "9589",
@@ -13,7 +13,7 @@ def operations_instans():
     return instans
 
 def test_is_state_correct(operations_instans):
-    assert operations_instans.is_state_correct() == False
+    assert operations_instans.is_state_correct() == True
 
 
 def test_date_mirror(operations_instans):
@@ -26,7 +26,7 @@ def test_code_count_number(operations_instans):
 
 @pytest.fixture
 def operations_instans1():
-    instans1 = Operations("EXECUTED",
+    instans1 = Operations("",
                          "2019-08-26",
                          "Перевод организации",
                          "9589",
@@ -35,11 +35,11 @@ def operations_instans1():
                          "Счет 75106830613657916952")
     return instans1
 
-def test_is_state_correct(operations_instans1):
-    assert operations_instans1.is_state_correct() == True
+def test_is_state_correct1(operations_instans1):
+    assert operations_instans1.is_state_correct() == False
 
 
-def test_code_count_number(operations_instans1):
+def test_code_count_number1(operations_instans1):
     assert operations_instans1.code_count_number() == ("Счет 7510 68** **** **** 6952")
 
 
